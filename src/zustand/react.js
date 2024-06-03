@@ -1,6 +1,8 @@
 import { createStore} from "./vanilla.js"
+import { useSyncExternalStore } from "react"
 function useStore(api) {
-  return api.getState()
+  let value = useSyncExternalStore(api.subscribe, api.getState)
+  return value
 }
 
 export const create = (createState) => {
