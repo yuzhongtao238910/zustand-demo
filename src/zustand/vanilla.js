@@ -32,6 +32,6 @@ export const createStore = (createState) => {
     subscribe
   }
   // 调用 createState 方法 获取初始的状态
-  state = createState(setState, getState, subscribe)
+  state = createState(setState, getState, api)
   return api
 }
